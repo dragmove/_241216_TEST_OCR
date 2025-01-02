@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p>A simple project about Receipt OCR</p>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="image">Select Image to upload</label>
+            <input type="file" id="image" name="image" accept="image/*" required />
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <!-- Progress bar for file upload -->
+        <div id="progressContainer" style="display: none">
+            <label for="progress">Upload Progress:</label>
+            <progress id="progress" value="0" max="100" style="width: 100%"></progress>
+        </div>
+
+        <!-- OCR 버튼 -->
+        <button id="runOCR">Run OCR</button>
+
+        <!-- Display OCR result -->
+        <pre id="result"></pre>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/js/index.js"></script>
+    </body>
+</html>
